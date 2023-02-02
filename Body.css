@@ -1,0 +1,288 @@
+
+.nav-logo{  
+  height: 65px;
+  width: 65px;
+}
+
+.nav-head{
+  display: flex;  
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-btn{
+  justify-content: flex-end;
+  margin-left: 915px;
+}
+.nav-signin
+{
+  margin-left: 15px;
+  background-color: aquamarine;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: larger;
+  border: none;
+  padding: 15px;
+}
+.nav_link{
+  margin-left: 45px;
+  color: black;  
+  text-decoration: none;
+}
+.navbar{
+  display: flex;
+}
+/*Shimmer CSS */
+
+.shimInput{
+  height: 15px;
+  width: 15%;
+  margin-top: 5%;
+  display: flex;
+  text-align: center;
+}
+.shimBtn{
+  
+  background: #777;
+}
+.shimContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap:45px;
+    margin-top: 5%;;
+    justify-content: center;
+  }
+  .shimmer-card {
+    border-radius: 5px;
+    width: 19%;
+    height: 255px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-color: #bfc0c8;
+    box-shadow: 0 5px 7px 0 rgba(208, 209, 214, 0.6);
+  }
+  .shimmer-img {
+    height: 255px;
+    width: 100%;
+  }
+  .shimmer-title {
+    width: 60%;
+    margin-top: 10px;
+  }
+  .shimmer-tags {
+    width: 80%;
+    margin-top: 4px;
+  }
+  .shimmer-details {
+    width: 100%;
+    margin-top: 18px;
+  }
+ 
+  
+  /*Animation to Shimmer Component Cards */
+  .stroke-img {
+    border-radius: 5px;
+    height: 155px;
+    background: #777;
+  }
+  .stroke {
+    height: 15px;
+    background: #777;
+  }
+  .animate {
+    animation: shimmer 3s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+    background-size: 1000px 100%;
+  }
+
+
+  /*Card */
+  /* Restaurant cards CSS */
+.restaurant-list {
+  
+  text-decoration: none;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  max-width: 300px;
+  border-radius: 5px;
+  box-shadow: -1px 5px 10px 5px rgba(42, 42, 42, 0.2);
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.rest-card-name{
+  font-size: larger;
+  font-weight: 600;
+  margin: 5px;
+}
+.rest-card{
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card > img {
+  width: 100%;
+  min-height: 65%;
+  border-radius: 10px;
+}
+.card > h3 {
+  padding-top: 2%;
+  font-weight:700;
+  font-size: large;
+}
+.card > h5 {
+  font-weight: 400;
+}
+
+.card > span {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.card > span > h4 {
+  font-weight: bolder;
+  font-size: 12px;
+  padding: 0 2px 0;
+  margin-top: 10px;
+}
+
+.card > span > h4:first-child {
+  display: flex;
+  align-items: center;
+  background-color: var(--light-green);
+  border-radius: 5px;
+  color: rgb(14, 13, 13);
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.card > span > h4:first-child .fa-star {
+  font-size: 10px;
+  padding: 0 5px 3px 0;
+}
+.checked {
+  color: rgb(235, 228, 9);
+  height: 20%;
+  width: 20%;
+  margin-left: 5px;
+}
+.search-food{
+  border-style: double;
+  border-color: coral;
+  padding: 5px;
+  border-radius: 5px;
+}
+.search-container {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.search-container .search-input {
+  width: 20%;
+  border-radius: 5px;
+  padding: 1%;
+  margin-right: 1%;
+  box-sizing: border-box;
+  border: 1px solid #115e99;
+}
+
+.search-container .search-btn {
+  background-color: #a75438;
+  color: #ffffff;
+  padding: 15px 22px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+.search-container .search-btn:hover {
+  background-color: #bd7a33;
+}
+
+/*Restaurant List */
+.box{
+  display: flex;
+  background-color: black;
+  height: 245px;
+}
+.box-img{
+  margin-top: 45px;
+  margin-left: 155px;
+  height: 145px;
+}
+.box-content{
+  color: white;
+  margin-top: 5px; 
+  margin-left: 155px;
+  width: 355px;
+}
+.rest-name{
+  font-size: 25px;
+}
+
+.discount{
+  color: white;
+  margin-top: 75px; 
+  margin-left: 45px;
+  width: 355px;
+}
+
+.food-items{
+  margin-left: 45px;
+  margin-top: 5px;
+  display: flex;
+}
+
+.add-cart{
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.food-box{
+  margin: 5px;
+  margin-left: 195px;
+  margin-right: 195px;
+  display: flex;
+  border-bottom: 3px solid rgb(179, 177, 177);
+}
+.addTocart{
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #f3c930;
+  padding: 6px;
+  border-radius: 9%;
+}
+
+.food-add-img{
+  margin-bottom: 5%;
+  height: 65px;
+  width: 95px;
+}
+
+.cart-body{
+  flex-direction: column;
+  width: 945px;
+}
+
+.cart-item-name{
+  font-size: 30px;  
+  font-weight: bolder;
+  
+}
+.cart-item-description{
+  font-size: 20px;  
+  font-weight: 300;
+}

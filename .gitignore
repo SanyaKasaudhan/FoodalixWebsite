@@ -1,0 +1,13 @@
+
+# Node artifact files
+node_modules/
+dist/
+node_modules\
+
+# Maven
+target/
+dist/
+
+
+# parcel files
+.parcel-cache
