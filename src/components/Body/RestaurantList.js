@@ -63,7 +63,7 @@ const RestaurantList = () => {
         {Object.values(restaurant?.menu?.items).map((item) => (
           <div className="food-box">
             <span>
-              <div className="food-items" key={item.id}>
+              <div className="food-item" key={item.id}>
                 <div className="cart-body">
                 <div className="cart-item-name">{item.name}</div>
                 <div className="cart-item-description">{item?.description}</div>

@@ -261,6 +261,12 @@
   display: flex;
 }
 
+.food-item{
+  margin-left: 85px;
+  margin-top: 5px;
+  display: flex;
+}
+
 .add-cart{
   margin-right: 555px;
   margin-bottom: 5px;

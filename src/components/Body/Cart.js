@@ -1,8 +1,17 @@
 import { useSelector } from "react-redux";
 import { IMG_CDN_URL } from "../Header/utils/constants";
+import {useDispatch} from 'react-redux';
+import { clearItem, removeItem} from "../Header/utils/cartSlice";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
+  const dispatch=useDispatch();
+  const removeItemFromCart = (cart)=>{
+    dispatch(removeItem(cart))
+  }
+  const clearCart = ()=>{
+    dispatch(clearItem())
+  }
   const total = () => {
     let price = 0;
     cartItems.forEach((element) => {
@@ -10,8 +19,10 @@ const Cart = () => {
     });
     return price / 100;
   };
+
   return (
     <>
+    <button onClick={()=>clearCart()}>Clear cart</button>
       <h1>Cart Total</h1>
       {cartItems?.map((cart) => {
         return (
@@ -23,6 +34,9 @@ const Cart = () => {
                   className="food-add-img"
                   src={IMG_CDN_URL + cart?.cloudinaryImageId}
                 />
+              </div>
+              <div className="">
+                <button className="remove" onClick={() => removeItemFromCart(cart)}>Remove item</button>
               </div>
               <div className="add-cart">
                 <div className="addTocart">Price {cart?.price / 100}</div>
