@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import { addItem } from "../Header/utils/cartSlice";
 import { IMG_CDN_URL } from "../Header/utils/constants";
 import useRestaurant from "../Header/utils/useRestaurant";
-import RestauratCardShimmer from "./RestauratCardShimmer";
+import RestaurantListShimmer from "./RestaurantListShimmer";
 
 const RestaurantList = () => {
   const { id } = useParams();
@@ -14,7 +14,7 @@ const RestaurantList = () => {
     dispatch(addItem(item))
   }
   return !restaurant ? (
-    <RestauratCardShimmer />
+    <RestaurantListShimmer />
   ) : (
     <>
       {console.log("res", restaurant)}

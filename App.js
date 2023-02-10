@@ -5,6 +5,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Cart from "./src/components/Body/Cart";
 import Restaurant from "./src/components/Body/Restaurant";
 import RestaurantList from "./src/components/Body/RestaurantList";
+import RestaurantListShimmer from "./src/components/Body/RestaurantListShimmer";
 import RestauratCardShimmer from "./src/components/Body/RestauratCardShimmer";
 import Error from "./src/components/Error";
 import Navbar from "./src/components/Header/Navbar";

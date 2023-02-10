@@ -34,16 +34,26 @@ const Restaurant = () => {
   }
 
   //sort data
-  function sortData(sort){
-    console.log(sort,filteredRestaurants,"sort");
-
-    if(sort=='LOW_TO_HIGH_RATING')
-    setFilteredRestaurants(allRestaurants.slice().sort((a,b)=> b.avgRating - a.avgRating))
-
-    if(sort=='HIGH_TO_LOW_RATING')
-    setFilteredRestaurants(allRestaurants.slice().sort((a,b)=> a.avgRating - b.avgRating))
-
-
+  function sortData(sort, filt){
+    console.log(sort,filt,"sort");
+    if(sort=='LOW_TO_HIGH_RATING'){
+    setFilteredRestaurants([...filt].sort((a, b) => a.data.avgRating - b.data.avgRating))
+    }
+    if(sort=='HIGH_TO_LOW_RATING'){
+      setFilteredRestaurants([...filt].sort((a, b) => b.data.avgRating - a.data.avgRating))
+      }
+    if(sort=='LOW_TO_HIGH_PRICE'){
+        setFilteredRestaurants([...filt].sort((a, b) => a.data.costForTwo - b.data.costForTwo))
+        }
+    if(sort=='HIGH_TO_LOW_PRICE'){
+        setFilteredRestaurants([...filt].sort((a, b) => b.data.costForTwo - a.data.costForTwo))
+    }
+    if(sort=='SHORTEST_DISTANCE'){
+      setFilteredRestaurants([...filt].sort((a, b) => a.data.lastMileTravel - b.data.lastMileTravel))
+      }
+    if(sort=='LESS_TIME'){
+        setFilteredRestaurants([...filt].sort((a, b) => a.data.sla.deliveryTime - b.data.sla.deliveryTime))
+        }
   }
   // use searchData function and set condition if data is empty show error message
   const searchData = (searchText, restaurants) => {
@@ -63,7 +73,7 @@ const Restaurant = () => {
   if (!allRestaurants) return null;
   return (
     <>
-    {console.log("filter",filteredRestaurants)}
+    {/* {console.log("filter",filteredRestaurants)} */}
       <div className="search-container">
         <input
           type="text"
@@ -83,13 +93,14 @@ const Restaurant = () => {
           Search
         </button>
 
-        <select className="sort_data" onChange={(event)=>sortData(event.target.value)}>
+        <select className="sort_data" onChange={()=>sortData(event.target.value , filteredRestaurants)}>
           <option value="DEFAULT" disabled>Sort</option>
           <option value="LOW_TO_HIGH_PRICE">Price, Low to high</option>
           <option value="HIGH_TO_LOW_PRICE">Price, High to Low</option>
-          <option value="RATING">Rating</option>
           <option value="LOW_TO_HIGH_RATING">Rating, Low to high</option>
           <option value="HIGH_TO_LOW_RATING">Rating, High to Low</option>
+          <option value="SHORTEST_DISTANCE">Shortest Distance</option>
+          <option value="LESS_TIME">Least Time to deliver</option>
         </select>
       </div>
       {errorMessage && <div className="error-container">{errorMessage}</div>}
