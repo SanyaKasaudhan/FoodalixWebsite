@@ -33,6 +33,18 @@ const Restaurant = () => {
     }
   }
 
+  //sort data
+  function sortData(sort){
+    console.log(sort,filteredRestaurants,"sort");
+
+    if(sort=='LOW_TO_HIGH_RATING')
+    setFilteredRestaurants(allRestaurants.slice().sort((a,b)=> b.avgRating - a.avgRating))
+
+    if(sort=='HIGH_TO_LOW_RATING')
+    setFilteredRestaurants(allRestaurants.slice().sort((a,b)=> a.avgRating - b.avgRating))
+
+
+  }
   // use searchData function and set condition if data is empty show error message
   const searchData = (searchText, restaurants) => {
     if (searchText !== "") {
@@ -51,6 +63,7 @@ const Restaurant = () => {
   if (!allRestaurants) return null;
   return (
     <>
+    {console.log("filter",filteredRestaurants)}
       <div className="search-container">
         <input
           type="text"
@@ -69,6 +82,15 @@ const Restaurant = () => {
         >
           Search
         </button>
+
+        <select className="sort_data" onChange={(event)=>sortData(event.target.value)}>
+          <option value="DEFAULT" disabled>Sort</option>
+          <option value="LOW_TO_HIGH_PRICE">Price, Low to high</option>
+          <option value="HIGH_TO_LOW_PRICE">Price, High to Low</option>
+          <option value="RATING">Rating</option>
+          <option value="LOW_TO_HIGH_RATING">Rating, Low to high</option>
+          <option value="HIGH_TO_LOW_RATING">Rating, High to Low</option>
+        </select>
       </div>
       {errorMessage && <div className="error-container">{errorMessage}</div>}
 
@@ -89,18 +111,6 @@ const Restaurant = () => {
           })}
         </div>
       )}
-
-    {/* <div className="restaurant-list">
-      {restaurantList.map((restaurant) => {
-        return (<>
-        <Link className="rest-card" to={"/restaurant/"+ restaurant?.data?.id} key={restaurant?.data?.id}>
-          <RestaurantCard {...restaurant?.data} />
-          </Link>
-          </>
-        );
-      })
-    }
-      </div> */}
     </>
   )
 }

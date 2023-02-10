@@ -13,13 +13,14 @@
 
 .nav-btn{
   justify-content: flex-end;
-  margin-left: 915px;
+  margin-left: 815px;
 }
 .nav-signin
 {
-  margin-left: 15px;
-  background-color: aquamarine;
+  margin-left: 5px;
+  background-color: rgb(23, 23, 160);
   border-radius: 5px;
+  color: aliceblue;
   font-weight: 600;
   font-size: larger;
   border: none;
@@ -97,11 +98,23 @@
     background-size: 1000px 100%;
   }
 
+.cart-length{
+  display: flex;
 
+}
+.badge {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  height: 20px;
+  width: 15px;
+  text-align: center;
+  border-radius: 15px;
+}
   /*Card */
   /* Restaurant cards CSS */
 .restaurant-list {
-  
+  color: initial;
+  color: black;
   text-decoration: none;
   width: auto;
   display: flex;
@@ -196,9 +209,10 @@
   width: 20%;
   border-radius: 5px;
   padding: 1%;
+  font-size: 15px;
   margin-right: 1%;
   box-sizing: border-box;
-  border: 1px solid #115e99;
+  border: 2px solid #1f2f3a;
 }
 
 .search-container .search-btn {
@@ -242,13 +256,13 @@
 }
 
 .food-items{
-  margin-left: 45px;
+  margin-left: 345px;
   margin-top: 5px;
   display: flex;
 }
 
 .add-cart{
-  margin-left: 5px;
+  margin-right: 555px;
   margin-bottom: 5px;
 }
 .food-box{
@@ -263,6 +277,7 @@
   box-sizing: border-box;
   background-color: #f3c930;
   padding: 6px;
+  width: 85px;
   border-radius: 9%;
 }
 
@@ -285,4 +300,23 @@
 .cart-item-description{
   font-size: 20px;  
   font-weight: 300;
+}
+
+
+.sort_data{
+  margin-left: 155px;
+  padding: 5px;
+  border: 2px solid rgb(51, 44, 80);
+}
+
+.totalPrice{
+  margin-left: 855px;
+  display: flex;
+  font-size: x-large;
+}
+
+
+.total{
+  margin-left: 15px;
+  color: rgb(19, 19, 20);
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../../assets/logo.jpg'
+import {useSelector} from 'react-redux'
 const Navbar = () => {
+  const cartItems=useSelector(store=> store.cart.items)
   return (
     <>
       {/* Navbar start */}
@@ -12,6 +14,11 @@ const Navbar = () => {
         <Link className='nav_link' to="/">Home</Link>
         <Link className='nav_link' to="/about">About </Link>
         <Link className='nav_link' to="/instamart">Instamart </Link>
+        <Link className='nav_link cart-length' to="/cart"><>
+        <i className="fa fa-shopping-cart" style={{fontSize:"25px"}}></i> 
+        <span class="badge">{cartItems.length}</span>
+        </> 
+        </Link>
       </ul>
       <div className='nav-btn'>
         <button className='nav-signin'>Sign In</button>
