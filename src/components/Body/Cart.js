@@ -22,8 +22,9 @@ const Cart = () => {
 
   return (
     <>
-    <button onClick={()=>clearCart()}>Clear cart</button>
-      <h1>Cart Total</h1>
+    <button onClick={()=>clearCart()} className="button-71 clear-cart">Clear cart</button>
+    
+      <h1 className="cart_tot">Cart Total</h1>
       {cartItems?.map((cart) => {
         return (
           <>
@@ -35,8 +36,8 @@ const Cart = () => {
                   src={IMG_CDN_URL + cart?.cloudinaryImageId}
                 />
               </div>
-              <div className="">
-                <button className="remove" onClick={() => removeItemFromCart(cart)}>Remove item</button>
+              <div className="removeCart">
+                <button className="button-42" onClick={() => removeItemFromCart(cart)}>Remove item</button>
               </div>
               <div className="add-cart">
                 <div className="addTocart">Price {cart?.price / 100}</div>

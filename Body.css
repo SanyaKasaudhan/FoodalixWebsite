@@ -365,6 +365,7 @@
 
 .add-cart{
   margin-right: 555px;
+  margin-left:24px;
   margin-bottom: 5px;
 }
 .food-box{
@@ -377,9 +378,10 @@
 .addTocart{
   text-align: center;
   box-sizing: border-box;
-  background-color: #f3c930;
   padding: 6px;
   width: 85px;
+  font-size: large;
+  font-weight: 400;
   border-radius: 9%;
 }
 
@@ -425,4 +427,111 @@
 
 .delivery{
   margin: 55px;
+}
+
+/* CSS */
+
+.reg{
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  outline: 0;
+}
+.log{
+    margin-top: 5px;
+    margin-left: 25px;
+    font-size: 18px;
+    font-weight: 400;
+    outline: 0;
+}
+
+
+.clear-cart{  
+  margin-top: 25px;
+  margin-left: 455px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.button-71 {
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+   position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-71:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.button-71:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .button-71 {
+    padding: 16px 48px;
+  }
+}
+
+.cart_tot{
+  margin-top: 34px;
+  margin-left: 455px;
+}
+
+.removeCart{
+  width: 155px;
+}
+
+/* CSS */
+.button-42 {
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+}
+
+.button-42:hover {
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
 }

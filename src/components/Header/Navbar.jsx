@@ -10,6 +10,7 @@ const Navbar = () => {
      <nav className='navbar-back'>
       <div className='navbar'>
       <img src={logo} alt="logo" className='nav-logo' />
+      
       <ul className='nav-head'>
         <Link className='nav_link' to="/">Home</Link>
         <Link className='nav_link' to="/about">About </Link>
@@ -21,8 +22,8 @@ const Navbar = () => {
         </Link>
       </ul>
       <div className='nav-btn'>
-        <button className='nav-signin'>Sign In</button>
-        <button  className='nav-signin'>Register</button>
+      <button class="button-71 reg" role="button">Register</button>
+      <button class="button-71 log" role="button">Login</button>
       </div>
       </div>
      </nav>
