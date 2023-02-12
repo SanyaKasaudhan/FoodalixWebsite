@@ -54,7 +54,7 @@ const RestaurantList = () => {
             OFFERS
             {restaurant?.aggregatedDiscountInfo?.descriptionList.map((data) => {
               return (
-                <>
+                <>  key={data.id}
                   <li>{data.meta}</li>
                 </>
               );

@@ -19,7 +19,7 @@ const RestaurantCard = ({
         <div>
          {
             new Array(Math.floor(avgRating)).fill(0).map((_, index) =>
-            <span className="fa fa-star" style = { {color: "#fbc02d", fontSize: "1rem" }}></span>
+            <span key={index} className="fa fa-star" style = { {color: "#fbc02d", fontSize: "1rem" }}></span>
             )
           }
           {

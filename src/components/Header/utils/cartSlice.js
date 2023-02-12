@@ -17,16 +17,19 @@ const cartSlice=createSlice({
         },
         removeItem: (state,action)=>{
             state.items.splice(action.payload, 1);
-            console.log(state,"state")
         },
         addQty:(state,action) =>{
             state.qty.push(action.payload)
         },
         addPrice:(state,action)=>{
             state.price.push(action.payload)
+        },
+        removeQty: (state,action)=>{
+            state.qty.splice(action.payload, 1);
+            
         }
     }
 })
 
 export default cartSlice.reducer;
-export const{addItem,removeItem,clearItem,addQty,addPrice}=cartSlice.actions
+export const{addItem,removeItem,clearItem,addQty,addPrice,removeQty}=cartSlice.actions

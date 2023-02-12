@@ -2,16 +2,27 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { IMG_CDN_URL } from "../Header/utils/constants";
 import {useDispatch} from 'react-redux';
-import { clearItem, removeItem, addPrice} from "../Header/utils/cartSlice";
+import { clearItem, removeItem, addPrice , removeQty} from "../Header/utils/cartSlice";
+import { useEffect } from "react";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const qtyItems=useSelector((store)=>store.cart.qty)
   const totalPrice=useSelector(store=> store.cart.price)
+  
+  // const totalPriceOfCart 
+  let totalPriceOfCart=(totalPrice.reduce((partialSum, a) => partialSum + a, 0))/100;
+  console.log("t",  totalPriceOfCart)
+  // console.log(totalPriceOfCart(),"t")
   console.log("totalprice",totalPrice)
   const dispatch=useDispatch();
   const removeItemFromCart = (cart)=>{
     dispatch(removeItem(cart))
   }
+
+  const removeQtyToCartStore = (item)=>{
+    dispatch(removeQty(item))
+  }
+
   const clearCart = ()=>{
     dispatch(clearItem())
   }
@@ -29,13 +40,16 @@ const Cart = () => {
     <button onClick={()=>clearCart()} className="button-71 clear-cart">Clear cart</button>
     
       <h1 className="cart_tot">Cart Total</h1>
-      {cartItems?.map((cart) => {
+      {cartItems?.map((cart,index) => {key={index}
         const [qtyEachItem, setQtyEachItem]=useState(cart?.itemScore+1);
         const price =(cart)=>{
           let p =cart?.price / 100;
           let pp=  p*qtyEachItem;
           return pp;
         }
+        useEffect(()=>{
+          priceToStore(cart.price);
+        },[qtyEachItem])
         // const priceCa=cart.price*qtyEachItem/100;
         {console.log("price",cart.price*qtyEachItem/100)}
         const priceToStore = (priceCa)=>{
@@ -52,12 +66,12 @@ const Cart = () => {
                 />
               </div>
               <div className="qty">
-                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem+1);priceToStore((cart.price*qtyEachItem))}}>+</button>
+                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem+1)}}>+</button>
                 <div className="qty_tab" >{qtyEachItem}</div>
-                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem-1);priceToStore((cart.price*qtyEachItem))}}>-</button>
+                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem-1); removeQtyToCartStore(cart)}}>-</button>
               </div>
               <div className="removeCart">
-                <button className="button-42" onClick={() => removeItemFromCart(cart)}>Remove item</button>
+                <button className="button-42" onClick={() => removeItemFromCart(cart?.qty)}>Remove item</button>
               </div>
               <div className="add-cart">
                 <div className="addTocart" >Price {price(cart)} </div>
@@ -68,7 +82,7 @@ const Cart = () => {
       })}
       <div className="totalPrice">
         <div>Sub Price:</div>
-        <div className="total">Rs. {(total()*0.9).toFixed(2)}</div>
+        <div className="total">Rs. {totalPriceOfCart}</div>
       
         </div>
         <div className="totalPrice">

@@ -17,13 +17,13 @@ const Navbar = () => {
         <Link className='nav_link' to="/instamart">Instamart </Link>
         <Link className='nav_link cart-length' to="/cart"><>
         <i className="fa fa-shopping-cart" style={{fontSize:"25px"}}></i> 
-        <span class="badge">{cartItems.length}</span>
+        <span className="badge">{cartItems.length}</span>
         </> 
         </Link>
       </ul>
       <div className='nav-btn'>
-      <button class="button-71 reg" role="button">Register</button>
-      <button class="button-71 log" role="button">Login</button>
+      <button className="button-71 reg" role="button">Register</button>
+      <button className="button-71 log" role="button">Login</button>
       </div>
       </div>
      </nav>
