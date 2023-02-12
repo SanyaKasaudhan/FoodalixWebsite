@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import {useDispatch} from 'react-redux';
-import { addItem } from "../Header/utils/cartSlice";
+import { addItem, addQty } from "../Header/utils/cartSlice";
 import { IMG_CDN_URL } from "../Header/utils/constants";
 import useRestaurant from "../Header/utils/useRestaurant";
 import RestaurantListShimmer from "./RestaurantListShimmer";
@@ -12,6 +12,9 @@ const RestaurantList = () => {
   const dispatch=useDispatch();
   const addToCartStore = (item)=>{
     dispatch(addItem(item))
+  }
+  const addQtyToCartStore = (item)=>{
+    dispatch(addQty(item))
   }
   return !restaurant ? (
     <RestaurantListShimmer />
@@ -70,7 +73,7 @@ const RestaurantList = () => {
                 </div>
                 <div className="add-cart">
                 <img className="food-add-img" src={IMG_CDN_URL + item?.cloudinaryImageId} />
-                 <button className="addTocart" onClick={()=>addToCartStore(item)}>Add To Cart</button>
+                 <button className="addTocart" onClick={()=>{addToCartStore(item);addQtyToCartStore(item)}}>Add To Cart</button>
                  </div>
                  
               </div>

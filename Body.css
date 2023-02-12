@@ -352,7 +352,7 @@
 }
 
 .food-items{
-  margin-left: 345px;
+  margin-left: 145px;
   margin-top: 5px;
   display: flex;
 }
@@ -360,6 +360,11 @@
 .food-item{
   margin-left: 85px;
   margin-top: 5px;
+  display: flex;
+}
+
+.qty{
+  margin-left: 45px;
   display: flex;
 }
 
@@ -499,8 +504,22 @@
   margin-left: 455px;
 }
 
+.addRemove{
+  cursor: pointer;
+  padding: 5px;
+  max-height: 35px;
+  margin: 15px;
+  font-size: large;
+}
+
+.qty_tab{
+  margin-top: 22px;
+  font-weight: 600;
+}
+
 .removeCart{
   width: 155px;
+  margin-left: 55px;
 }
 
 /* CSS */
