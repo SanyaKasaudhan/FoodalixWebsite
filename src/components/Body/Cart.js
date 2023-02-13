@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { IMG_CDN_URL } from "../Header/utils/constants";
 import {useDispatch} from 'react-redux';
-import { clearItem, removeItem, addPrice , removeQty} from "../Header/utils/cartSlice";
+import { clearItem, removeItem, addPrice , removeQty, addQty} from "../Header/utils/cartSlice";
 import { useEffect } from "react";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const qtyItems=useSelector((store)=>store.cart.qty)
   const totalPrice=useSelector(store=> store.cart.price)
-  
+  console.log("qty",qtyItems)
   // const totalPriceOfCart 
   let totalPriceOfCart=(totalPrice.reduce((partialSum, a) => partialSum + a, 0))/100;
   console.log("t",  totalPriceOfCart)
@@ -19,9 +19,9 @@ const Cart = () => {
     dispatch(removeItem(cart))
   }
 
-  const removeQtyToCartStore = (item)=>{
-    dispatch(removeQty(item))
-  }
+  // const removeQtyToCartStore = (item)=>{
+  //   dispatch(removeQty(item))
+  // }
 
   const clearCart = ()=>{
     dispatch(clearItem())
@@ -42,6 +42,9 @@ const Cart = () => {
       <h1 className="cart_tot">Cart Total</h1>
       {cartItems?.map((cart,index) => {key={index}
         const [qtyEachItem, setQtyEachItem]=useState(cart?.itemScore+1);
+
+
+
         const price =(cart)=>{
           let p =cart?.price / 100;
           let pp=  p*qtyEachItem;
@@ -55,6 +58,15 @@ const Cart = () => {
         const priceToStore = (priceCa)=>{
           dispatch(addPrice(priceCa))
         }
+
+        const addQtyToStore =(qtyEachItem) =>{
+          dispatch(addQty(qtyEachItem))
+        }
+
+        const removeQtyToStore =(qtyEachItem)=>{
+          dispatch(removeQty(qtyEachItem))
+        }
+
         return (
           <>
             <div className="food-items" key={cart.id}>
@@ -66,9 +78,11 @@ const Cart = () => {
                 />
               </div>
               <div className="qty">
-                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem+1)}}>+</button>
+                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem+1); addQtyToStore(qtyEachItem)}}>+</button>
                 <div className="qty_tab" >{qtyEachItem}</div>
-                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem-1); removeQtyToCartStore(cart)}}>-</button>
+                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem-1); removeQtyToStore(qtyEachItem); 
+                  // removeQtyToCartStore(cart)
+                  }}>-</button>
               </div>
               <div className="removeCart">
                 <button className="button-42" onClick={() => removeItemFromCart(cart?.qty)}>Remove item</button>
