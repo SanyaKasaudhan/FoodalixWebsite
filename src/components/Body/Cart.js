@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { IMG_CDN_URL } from "../Header/utils/constants";
 import {useDispatch} from 'react-redux';
-import { clearItem, removeItem, addPrice , removeQty, addQty} from "../Header/utils/cartSlice";
+import { clearItem, removeItem, addPrice , removeQty, addQty, removePrice} from "../Header/utils/cartSlice";
 import { useEffect } from "react";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -18,10 +18,6 @@ const Cart = () => {
   const removeItemFromCart = (cart)=>{
     dispatch(removeItem(cart))
   }
-
-  // const removeQtyToCartStore = (item)=>{
-  //   dispatch(removeQty(item))
-  // }
 
   const clearCart = ()=>{
     dispatch(clearItem())
@@ -50,13 +46,13 @@ const Cart = () => {
           let pp=  p*qtyEachItem;
           return pp;
         }
-        useEffect(()=>{
-          priceToStore(cart.price);
-        },[qtyEachItem])
-        // const priceCa=cart.price*qtyEachItem/100;
         {console.log("price",cart.price*qtyEachItem/100)}
-        const priceToStore = (priceCa)=>{
+        const addPriceToStore = (priceCa)=>{
           dispatch(addPrice(priceCa))
+        }
+
+        const removePriceToStore = (priceCa)=>{
+          dispatch(removePrice(priceCa))
         }
 
         const addQtyToStore =(qtyEachItem) =>{
@@ -78,9 +74,9 @@ const Cart = () => {
                 />
               </div>
               <div className="qty">
-                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem+1); addQtyToStore(qtyEachItem)}}>+</button>
+                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem+1); addQtyToStore(qtyEachItem); addPriceToStore(cart.price)}}>+</button>
                 <div className="qty_tab" >{qtyEachItem}</div>
-                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem-1); removeQtyToStore(qtyEachItem); 
+                <button className="addRemove" onClick={()=>{setQtyEachItem(qtyEachItem-1); removeQtyToStore(qtyEachItem); removePriceToStore(cart.price) 
                   // removeQtyToCartStore(cart)
                   }}>-</button>
               </div>
