@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import Carousel from "./src/components/Body/Carousel";
 import Cart from "./src/components/Body/Cart";
 import Restaurant from "./src/components/Body/Restaurant";
 import RestaurantList from "./src/components/Body/RestaurantList";
@@ -48,7 +49,8 @@ const app = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Restaurant />,
+        element: <><Carousel/>
+        <Restaurant /></>,
       },
       {
         path: "/about",

@@ -321,7 +321,7 @@
 }
 
 .navbar-back{
-  background-color: #f3c930;
+  background-color: #f8f5ea;
 }
 /*Restaurant List */
 .box{
@@ -553,4 +553,9 @@
 
 .button-42:hover {
   box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+
+.carousel-img{
+  width: 217px;
+  height: 200px;
 }

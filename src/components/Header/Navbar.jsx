@@ -12,7 +12,7 @@ const Navbar = () => {
       <img src={logo} alt="logo" className='nav-logo' />
       
       <ul className='nav-head'>
-        <Link className='nav_link' to="/">Home</Link>
+        <Link className='nav_link' to="/"><i class='fa fa-home'></i>Home</Link>
         <Link className='nav_link' to="/about">About </Link>
         <Link className='nav_link' to="/instamart">Instamart </Link>
         <Link className='nav_link cart-length' to="/cart"><>
