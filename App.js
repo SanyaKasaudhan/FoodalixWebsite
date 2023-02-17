@@ -12,7 +12,6 @@ import Error from "./src/components/Error";
 import Navbar from "./src/components/Header/Navbar";
 import store from "./src/components/Header/utils/store";
 import useOnline from "./src/components/Header/utils/useOnline";
-import Sample from "./src/component/Sample";
 const About = lazy(() => import("./src/components/About"));
 const Instamart = lazy(() => import("./src/components/Instamart"));
 const App = () => {
@@ -24,7 +23,6 @@ const App = () => {
           <Provider store={store}>
             {console.log("store", store)}
             <Navbar />
-            <Sample />
             <Outlet />
           </Provider>
         </>

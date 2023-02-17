@@ -29,23 +29,23 @@ const RestaurantList = () => {
           <div>
             <h1>{restaurant?.name}</h1>
             <h2>{restaurant?.cuisines}</h2>
-            <h3>{restaurant?.labels[1]?.message.toLowerCase()}</h3>
+            <h4>{restaurant?.labels[1]?.message.toLowerCase()}</h4>
           </div>
           <div>
             {" "}
-            <h2>
+            <h3>
               {restaurant?.avgRating}{" "}
               <span
                 className="fa fa-star"
                 style={{ color: "#fbc02d", fontSize: "1rem" }}
               ></span>
-              <span style={{ marginLeft: "35px" }}>
+              <span style={{ marginLeft: "25px" }}>
                 {restaurant?.sla?.slaString.toLowerCase()}
               </span>
-              <span style={{ marginLeft: "35px" }}>
+              <span style={{ marginLeft: "25px" }}>
                 {restaurant?.costForTwoMsg}
               </span>
-            </h2>
+            </h3>
           </div>
         </div>
         <div>
@@ -54,8 +54,8 @@ const RestaurantList = () => {
             OFFERS
             {restaurant?.aggregatedDiscountInfo?.descriptionList.map((data) => {
               return (
-                <>  key={data.id}
-                  <li>{data.meta}</li>
+                <>  
+                  <li key={data.id}>{data.meta}</li>
                 </>
               );
             })}{" "}
